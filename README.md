@@ -55,6 +55,19 @@ Alongside overall task success, the benchmark will look at:
 
 Whenever possible, tasks will use deterministic graders. When human judgment is necessary, we will document the rubric and review process.
 
+## First Prototype
+
+### The Museum of Lost Hours (`nwb-mr-001`)
+
+At the end of a midnight shift, two museum alarms disagree. The model must
+reconstruct the real location of five artifacts from a ledger containing
+pending moves, cancellations, room locks, rollbacks, duplicated records, and
+delayed sensor snapshots.
+
+The task includes a reproducible generator and a deterministic grader.
+
+[Explore the task](tasks/messy_reality/museum_of_lost_hours)
+
 ## Current Status
 
 The project is currently defining its task standards and building the first set of benchmark prototypes.
