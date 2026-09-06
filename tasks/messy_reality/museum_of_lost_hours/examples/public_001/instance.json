@@ -1,0 +1,224 @@
+{
+  "task_id": "nwb-mr-001",
+  "task_version": "0.1.0",
+  "title": "The Museum of Lost Hours",
+  "seed": 20260906,
+  "rules": [
+    "A MOVE REQUEST only opens a ticket. It does not move an artifact.",
+    "A SEAL moves the artifact only if the ticket is still open, the artifact is still in the stated source room, and the destination room is unlocked.",
+    "A failed SEAL closes its ticket and cannot be retried.",
+    "A CANCEL closes an open ticket without moving anything.",
+    "A ROLLBACK reverses a previously sealed move only if that same ticket is still the artifact's most recent successful move.",
+    "LOCK and UNLOCK take effect immediately. A locked source room may be moved out of, but a locked destination may not receive an artifact.",
+    "If the same event ID appears more than once, later copies are transmission echoes and must be ignored.",
+    "Sensor snapshots and staff notes are observations only. They never change museum state.",
+    "Process non-duplicate events in the order shown. Timestamps printed inside a retransmitted event may therefore appear out of order."
+  ],
+  "initial_locations": {
+    "The Crown of Quiet Rain": "Hall of Echoes",
+    "The Glass Fox": "Closed Archive",
+    "The Map of a City That Never Existed": "North Lantern Room",
+    "The Choir in a Jar": "Tidal Gallery",
+    "The Moon That Forgot the Sea": "Restoration Atelier"
+  },
+  "events": [
+    {
+      "event_id": "E-7187",
+      "time": "00:03",
+      "kind": "open_move",
+      "ticket": "T-COMET-29",
+      "artifact": "The Crown of Quiet Rain",
+      "source": "Hall of Echoes",
+      "destination": "Closed Archive"
+    },
+    {
+      "event_id": "E-2298",
+      "time": "00:04",
+      "kind": "seal",
+      "ticket": "T-COMET-29"
+    },
+    {
+      "event_id": "E-8235",
+      "time": "00:06",
+      "kind": "open_move",
+      "ticket": "T-LYNX-25",
+      "artifact": "The Glass Fox",
+      "source": "Closed Archive",
+      "destination": "North Lantern Room"
+    },
+    {
+      "event_id": "E-9028",
+      "time": "00:07",
+      "kind": "cancel",
+      "ticket": "T-LYNX-25"
+    },
+    {
+      "event_id": "E-1929",
+      "time": "00:09",
+      "kind": "sensor",
+      "captured_at": "00:04",
+      "room": "Hall of Echoes",
+      "contents": []
+    },
+    {
+      "event_id": "E-9052",
+      "time": "00:12",
+      "kind": "seal",
+      "ticket": "T-LYNX-25"
+    },
+    {
+      "event_id": "E-2298",
+      "time": "00:04",
+      "kind": "seal",
+      "ticket": "T-COMET-29"
+    },
+    {
+      "event_id": "E-4062",
+      "time": "00:14",
+      "kind": "lock",
+      "room": "Tidal Gallery"
+    },
+    {
+      "event_id": "E-4936",
+      "time": "00:16",
+      "kind": "open_move",
+      "ticket": "T-MARBLE-24",
+      "artifact": "The Map of a City That Never Existed",
+      "source": "North Lantern Room",
+      "destination": "Tidal Gallery"
+    },
+    {
+      "event_id": "E-4338",
+      "time": "00:17",
+      "kind": "seal",
+      "ticket": "T-MARBLE-24"
+    },
+    {
+      "event_id": "E-1660",
+      "time": "00:18",
+      "kind": "unlock",
+      "room": "Tidal Gallery"
+    },
+    {
+      "event_id": "E-1030",
+      "time": "00:21",
+      "kind": "open_move",
+      "ticket": "T-EMBER-96",
+      "artifact": "The Map of a City That Never Existed",
+      "source": "North Lantern Room",
+      "destination": "Tidal Gallery"
+    },
+    {
+      "event_id": "E-9843",
+      "time": "00:24",
+      "kind": "seal",
+      "ticket": "T-EMBER-96"
+    },
+    {
+      "event_id": "E-8766",
+      "time": "00:26",
+      "kind": "open_move",
+      "ticket": "T-IVORY-16",
+      "artifact": "The Choir in a Jar",
+      "source": "Tidal Gallery",
+      "destination": "Restoration Atelier"
+    },
+    {
+      "event_id": "E-1634",
+      "time": "00:29",
+      "kind": "seal",
+      "ticket": "T-IVORY-16"
+    },
+    {
+      "event_id": "E-7683",
+      "time": "00:31",
+      "kind": "note",
+      "text": "A conservator wrote that The Choir in a Jar looked better in Restoration Atelier. This note is not an instruction."
+    },
+    {
+      "event_id": "E-3863",
+      "time": "00:33",
+      "kind": "rollback",
+      "ticket": "T-IVORY-16"
+    },
+    {
+      "event_id": "E-1931",
+      "time": "00:34",
+      "kind": "open_move",
+      "ticket": "T-THORN-38",
+      "artifact": "The Moon That Forgot the Sea",
+      "source": "Restoration Atelier",
+      "destination": "Hall of Echoes"
+    },
+    {
+      "event_id": "E-7523",
+      "time": "00:35",
+      "kind": "seal",
+      "ticket": "T-THORN-38"
+    },
+    {
+      "event_id": "E-5802",
+      "time": "00:38",
+      "kind": "open_move",
+      "ticket": "T-MIRROR-40",
+      "artifact": "The Moon That Forgot the Sea",
+      "source": "Hall of Echoes",
+      "destination": "North Lantern Room"
+    },
+    {
+      "event_id": "E-7929",
+      "time": "00:41",
+      "kind": "seal",
+      "ticket": "T-MIRROR-40"
+    },
+    {
+      "event_id": "E-3221",
+      "time": "00:44",
+      "kind": "rollback",
+      "ticket": "T-THORN-38"
+    },
+    {
+      "event_id": "E-2401",
+      "time": "00:47",
+      "kind": "rollback",
+      "ticket": "T-MIRROR-40"
+    },
+    {
+      "event_id": "E-2831",
+      "time": "00:50",
+      "kind": "open_move",
+      "ticket": "T-RAVEN-62",
+      "artifact": "The Glass Fox",
+      "source": "Tidal Gallery",
+      "destination": "Hall of Echoes"
+    },
+    {
+      "event_id": "E-3505",
+      "time": "00:53",
+      "kind": "seal",
+      "ticket": "T-RAVEN-62"
+    },
+    {
+      "event_id": "E-9364",
+      "time": "00:55",
+      "kind": "sensor",
+      "captured_at": "00:01",
+      "room": "Restoration Atelier",
+      "contents": [
+        "The Moon That Forgot the Sea"
+      ]
+    }
+  ],
+  "alarms": [
+    {
+      "alarm_id": "ALARM-TIDE",
+      "artifact": "The Crown of Quiet Rain",
+      "claimed_room": "Tidal Gallery"
+    },
+    {
+      "alarm_id": "ALARM-BELL",
+      "artifact": "The Map of a City That Never Existed",
+      "claimed_room": "Tidal Gallery"
+    }
+  ]
+}

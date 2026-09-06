@@ -1,0 +1,22 @@
+{
+  "final_locations": {
+    "The Crown of Quiet Rain": "Closed Archive",
+    "The Glass Fox": "Closed Archive",
+    "The Map of a City That Never Existed": "Tidal Gallery",
+    "The Choir in a Jar": "Tidal Gallery",
+    "The Moon That Forgot the Sea": "Hall of Echoes"
+  },
+  "failed_seals": [
+    "T-LYNX-25",
+    "T-MARBLE-24",
+    "T-RAVEN-62"
+  ],
+  "successful_rollbacks": [
+    "T-IVORY-16",
+    "T-MIRROR-40"
+  ],
+  "failed_rollbacks": [
+    "T-THORN-38"
+  ],
+  "false_alarm": "ALARM-TIDE"
+}
